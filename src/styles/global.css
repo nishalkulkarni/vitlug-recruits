@@ -11,7 +11,7 @@ html {
 
 body {
   --bg: white;
-  --textNormal: #252525;
+  --textNormal: black;
 
   background-color: var(--bg);
   color: var(--textNormal);
