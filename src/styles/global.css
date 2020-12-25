@@ -33,7 +33,7 @@ body.dark {
   width: 32px;
   height: 32px;
   cursor: pointer;
-  position: fixed;
+  position: absolute;
   top: 16px;
   right: 16px;
   background-image: url("https://raw.githubusercontent.com/gaearon/overreacted.io/master/src/assets/sun.png");
