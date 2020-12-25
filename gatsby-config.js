@@ -1,34 +1,52 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `VIT-LUG Recruits 2020`,
+    description: `Congratulations to all new recruits! Welcome to VIT-Linux User's Group`,
+    author: `@nishalkulkarni`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: `data`,
+        path: `${__dirname}/src/data/`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    `gatsby-transformer-csv`,
+    `gatsby-plugin-postcss`,
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: "gatsby-plugin-local-search",
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        name: "people",
+        engine: "flexsearch",
+        // engineOptions: "default",
+        query: `
+          {
+            allPeopleCsv {
+              edges {
+                node {
+                  id
+                  Name
+                  Registration_Number
+                  Email
+                  Domain
+                }
+              }
+            }
+          }
+        `,
+        ref: "id",
+        index: ["Registration_Number", "Domain"],
+        store: ["id", "Name", "Registration_Number", "Domain"],
+        normalizer: ({ data }) =>
+          data.allPeopleCsv.edges.map(({ node }) => ({
+            id: node.id,
+            Name: node.Name,
+            Registration_Number: node.Registration_Number,
+            Email: node.Email,
+            Domain: node.Domain,
+          })),
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }

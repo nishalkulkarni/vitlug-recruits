@@ -1,22 +1,78 @@
-import React from "react"
-import { Link } from "gatsby"
-
+import React, { useState } from "react"
+import { graphql } from "gatsby"
+import { useFlexSearch } from "react-use-flexsearch"
 import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import SelectItem from "../components/selectItem"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
+export default function IndexPage({ data }) {
+  const index = data.localSearchPeople.index
+  const store = data.localSearchPeople.store
 
-export default IndexPage
+  const [query, setQuery] = useState("")
+  const results = useFlexSearch(query, index, store)
+
+  const recruits = data.allPeopleCsv.edges
+  return (
+    <Layout>
+      <h2 className={`text-3xl`}>{data.site.siteMetadata.title}</h2>
+      <h3 className={`text-2xl pb-8`}>{data.site.siteMetadata.description}</h3>
+      <input
+        name="query"
+        value={query}
+        class="w-full h-16 px-3 rounded mb-8 focus:outline-none focus:shadow-outline text-xl px-8 shadow"
+        type="search"
+        onChange={event => setQuery(event.target.value.toUpperCase())}
+        placeholder="Search Registration Number or Domain..."
+      />
+      {results.length > 0 ? (
+        <div className={`divide-y divide-solid`}>
+          {results.map(node => (
+            <SelectItem
+              id={node.id}
+              name={node.Name}
+              domain={node.Domain}
+              regno={node.Registration_Number}
+            />
+          ))}
+        </div>
+      ) : (
+        <div className={`divide-y divide-solid`}>
+          {recruits.map(({ node }) => (
+            <SelectItem
+              id={node.id}
+              name={node.Name}
+              domain={node.Domain}
+              regno={node.Registration_Number}
+            />
+          ))}
+        </div>
+      )}
+    </Layout>
+  )
+}
+
+export const query = graphql`
+  query {
+    allPeopleCsv {
+      edges {
+        node {
+          id
+          Name
+          Registration_Number
+          Email
+          Domain
+        }
+      }
+    }
+    site {
+      siteMetadata {
+        description
+        title
+      }
+    }
+    localSearchPeople {
+      index
+      store
+    }
+  }
+`
