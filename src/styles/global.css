@@ -2,9 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
 
-html{
-    font-family: 'JetBrains Mono', monospace;
-    /* background-color: rgb(255, 233, 233); */
+html {
+  font-family: "JetBrains Mono", monospace;
+  /* background-color: rgb(255, 233, 233); */
+}
+
+body {
+  --bg: white;
+  --textNormal: black;
+
+  background-color: var(--bg);
+  color: var(--textNormal);
+}
+
+body.dark {
+  -webkit-font-smoothing: antialiased;
+
+  --bg: #121212;
+  --textNormal: #ffffff;
+}
+
+.themeBox input[type="checkbox"] {
+  display: none;
+}
+
+.themeBox input + label {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  background-image: url("https://raw.githubusercontent.com/gaearon/overreacted.io/master/src/assets/sun.png");
+}
+
+.themeBox input[type="checkbox"]:checked + label {
+  background-image: url("https://raw.githubusercontent.com/gaearon/overreacted.io/master/src/assets/moon.png");
 }

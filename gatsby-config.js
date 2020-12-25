@@ -14,6 +14,7 @@ module.exports = {
     },
     `gatsby-transformer-csv`,
     `gatsby-plugin-postcss`,
+    `gatsby-plugin-dark-mode`,
     {
       resolve: "gatsby-plugin-local-search",
       options: {

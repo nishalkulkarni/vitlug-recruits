@@ -20,6 +20,7 @@ export default function IndexPage({ data }) {
         name="query"
         value={query}
         class="w-full h-16 px-3 rounded mb-8 focus:outline-none focus:shadow-outline text-xl px-8 shadow"
+        style={{color: `black`}}
         type="search"
         onChange={event => setQuery(event.target.value.toUpperCase())}
         placeholder="Search Registration Number or Domain..."
