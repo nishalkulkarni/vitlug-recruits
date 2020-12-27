@@ -11,21 +11,21 @@ const SelectItem = props => (
     <div className={`flex-none sm:text-right sm:flex-1`}>
       {props.domain === "TECHNICAL" && (
         <button
-          className={`uppercase text-base font-semibold px-4 rounded bg-green-300 text-green-600 max-w-max shadow-sm`}
+          className={`uppercase text-base font-semibold px-4 my-1 rounded bg-green-300 text-green-600 max-w-max shadow-sm`}
         >
           {props.domain}
         </button>
       )}
       {props.domain === "MANAGEMENT" && (
         <button
-          className={`uppercase text-base font-semibold px-4 rounded bg-yellow-300 text-yellow-600 max-w-max shadow-sm`}
+          className={`uppercase text-base font-semibold px-4 my-1 rounded bg-yellow-300 text-yellow-600 max-w-max shadow-sm`}
         >
           {props.domain}
         </button>
       )}
       {props.domain === "DESIGN" && (
         <button
-          className={`uppercase text-base font-semibold px-4 rounded bg-blue-300 text-blue-600 max-w-max shadow-sm`}
+          className={`uppercase text-base font-semibold px-4 my-1 rounded bg-blue-300 text-blue-600 max-w-max shadow-sm`}
         >
           {props.domain}
         </button>
@@ -33,21 +33,21 @@ const SelectItem = props => (
 
       {props.domain2 === "TECHNICAL" && (
         <button
-          className={`uppercase text-base font-semibold px-4 rounded bg-green-300 text-green-600 max-w-max shadow-sm ml-2`}
+          className={`uppercase text-base font-semibold px-4 my-1 rounded bg-green-300 text-green-600 max-w-max shadow-sm ml-2`}
         >
           {props.domain2}
         </button>
       )}
       {props.domain2 === "MANAGEMENT" && (
         <button
-          className={`uppercase text-base font-semibold px-4 rounded bg-yellow-300 text-yellow-600 max-w-max shadow-sm ml-2`}
+          className={`uppercase text-base font-semibold px-4 my-1 rounded bg-yellow-300 text-yellow-600 max-w-max shadow-sm ml-2`}
         >
           {props.domain2}
         </button>
       )}
       {props.domain2 === "DESIGN" && (
         <button
-          className={`uppercase text-base font-semibold px-4 rounded bg-blue-300 text-blue-600 max-w-max shadow-sm ml-2`}
+          className={`uppercase text-base font-semibold px-4 my-1 rounded bg-blue-300 text-blue-600 max-w-max shadow-sm ml-2`}
         >
           {props.domain2}
         </button>
@@ -55,21 +55,21 @@ const SelectItem = props => (
 
       {props.domain3 === "TECHNICAL" && (
         <button
-          className={`uppercase text-base font-semibold px-4 rounded bg-green-300 text-green-600 max-w-max shadow-sm ml-2`}
+          className={`uppercase text-base font-semibold px-4 my-1 rounded bg-green-300 text-green-600 max-w-max shadow-sm ml-2`}
         >
           {props.domain3}
         </button>
       )}
       {props.domain3 === "MANAGEMENT" && (
         <button
-          className={`uppercase text-base font-semibold px-4 rounded bg-yellow-300 text-yellow-600 max-w-max shadow-sm ml-2`}
+          className={`uppercase text-base font-semibold px-4 my-1 rounded bg-yellow-300 text-yellow-600 max-w-max shadow-sm ml-2`}
         >
           {props.domain3}
         </button>
       )}
       {props.domain3 === "DESIGN" && (
         <button
-          className={`uppercase text-base font-semibold px-4 rounded bg-blue-300 text-blue-600 max-w-max shadow-sm ml-2`}
+          className={`uppercase text-base font-semibold px-4 my-1 rounded bg-blue-300 text-blue-600 max-w-max shadow-sm ml-2`}
         >
           {props.domain3}
         </button>
