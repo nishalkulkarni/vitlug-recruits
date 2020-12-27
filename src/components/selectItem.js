@@ -1,6 +1,6 @@
 import React from "react"
 
-const SelectItem = (props) => (
+const SelectItem = props => (
   <div key={props.id} className={`flex flex-col sm:flex-row divide-solid p-6`}>
     <div className={`flex-none sm:text-left sm:flex-1`}>
       <h4>{props.name}</h4>
@@ -28,6 +28,50 @@ const SelectItem = (props) => (
           className={`uppercase text-base font-semibold px-4 rounded bg-blue-300 text-blue-600 max-w-max shadow-sm`}
         >
           {props.domain}
+        </button>
+      )}
+
+      {props.domain2 === "TECHNICAL" && (
+        <button
+          className={`uppercase text-base font-semibold px-4 rounded bg-green-300 text-green-600 max-w-max shadow-sm ml-2`}
+        >
+          {props.domain2}
+        </button>
+      )}
+      {props.domain2 === "MANAGEMENT" && (
+        <button
+          className={`uppercase text-base font-semibold px-4 rounded bg-yellow-300 text-yellow-600 max-w-max shadow-sm ml-2`}
+        >
+          {props.domain2}
+        </button>
+      )}
+      {props.domain2 === "DESIGN" && (
+        <button
+          className={`uppercase text-base font-semibold px-4 rounded bg-blue-300 text-blue-600 max-w-max shadow-sm ml-2`}
+        >
+          {props.domain2}
+        </button>
+      )}
+
+      {props.domain3 === "TECHNICAL" && (
+        <button
+          className={`uppercase text-base font-semibold px-4 rounded bg-green-300 text-green-600 max-w-max shadow-sm ml-2`}
+        >
+          {props.domain3}
+        </button>
+      )}
+      {props.domain3 === "MANAGEMENT" && (
+        <button
+          className={`uppercase text-base font-semibold px-4 rounded bg-yellow-300 text-yellow-600 max-w-max shadow-sm ml-2`}
+        >
+          {props.domain3}
+        </button>
+      )}
+      {props.domain3 === "DESIGN" && (
+        <button
+          className={`uppercase text-base font-semibold px-4 rounded bg-blue-300 text-blue-600 max-w-max shadow-sm ml-2`}
+        >
+          {props.domain3}
         </button>
       )}
     </div>

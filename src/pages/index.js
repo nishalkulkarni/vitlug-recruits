@@ -32,6 +32,8 @@ export default function IndexPage({ data }) {
               id={node.id}
               name={node.Name}
               domain={node.Domain}
+              domain2={node.Domain_2}
+              domain3={node.Domain_3}
               regno={node.Registration_Number}
             />
           ))}
@@ -43,6 +45,8 @@ export default function IndexPage({ data }) {
               id={node.id}
               name={node.Name}
               domain={node.Domain}
+              domain2={node.Domain_2}
+              domain3={node.Domain_3}
               regno={node.Registration_Number}
             />
           ))}
@@ -60,8 +64,9 @@ export const query = graphql`
           id
           Name
           Registration_Number
-          Email
           Domain
+          Domain_2
+          Domain_3
         }
       }
     }

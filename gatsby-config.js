@@ -29,23 +29,25 @@ module.exports = {
                   id
                   Name
                   Registration_Number
-                  Email
                   Domain
+                  Domain_2
+                  Domain_3
                 }
               }
             }
           }
         `,
         ref: "id",
-        index: ["Registration_Number", "Domain"],
-        store: ["id", "Name", "Registration_Number", "Domain"],
+        index: ["Registration_Number", "Domain", "Domain_2", "Domain_3"],
+        store: ["id", "Name", "Registration_Number", "Domain", "Domain_2", "Domain_3"],
         normalizer: ({ data }) =>
           data.allPeopleCsv.edges.map(({ node }) => ({
             id: node.id,
             Name: node.Name,
             Registration_Number: node.Registration_Number,
-            Email: node.Email,
             Domain: node.Domain,
+            Domain_2: node.Domain_2,
+            Domain_3: node.Domain_3,
           })),
       },
     },
