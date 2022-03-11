@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `VIT-LUG Recruits 2020`,
+    title: `VIT-LUG Recruits 2022`,
     description: `Congratulations to all new recruits! Welcome to VIT-Linux User's Group`,
     author: `@nishalkulkarni`,
   },
